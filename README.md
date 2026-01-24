@@ -26,7 +26,20 @@
   pip install requests python-dotenv httpx  # httpx 是 LangChain 推荐的异步客户端
   ```
   
-  
+
+## 技术信息
+
+### 1、Dify
+
+https://docs.dify.ai/zh/self-host/quick-start/docker-compose
+
+### 2、LangChain
+
+https://www.langchain.com.cn/
+
+### 3、Python
+
+https://liaoxuefeng.com/books/python/introduction/index.html
 
 ## 项目目录
 
@@ -138,6 +151,61 @@ pip freeze > requirements.txt
 
 
 
-## Dify
+## 第二周
 
-https://docs.dify.ai/zh/self-host/quick-start/docker-compose
+### 1、Python高级特性
+
+| 类别                  | 内容                                                         |
+| :-------------------- | :----------------------------------------------------------- |
+| **Python 进阶**       | -:white_check_mark: 类与对象基础（`class`, `__init__`） <br />-:white_check_mark: 函数定义与调用（参数、返回值） <br />-:white_check_mark: 列表推导式（List Comprehension） <br />-:white_check_mark: 使用 `requests` 库发起 HTTP 请求获取天气数据 |
+| **Pydantic 数据模型** | -:white_check_mark: 定义输入参数校验模型（如城市名、单位等） <br />-:white_check_mark: 使用 `pydantic.BaseModel` 构建工具输入 Schema |
+
+#### 1、安装jupyterlab
+
+```bash
+conda install -c conda-forge jupyterlab
+```
+
+#### 2、类与对象基础
+
+#### 3、安装Pydantic
+
+
+
+
+
+
+
+### 2、LangChain入门
+
+| 类别                   | 内容                                                         |
+| :--------------------- | :----------------------------------------------------------- |
+| **LangChain 核心概念** | - LLM 封装调用（如 Qwen / OpenAI） <br />- `PromptTemplate`：构建动态提示词 - `@tool` 装饰器：定义可调用工具 <br />- `AgentExecutor`：驱动 Agent 执行流程 |
+
+#### 1、LangChain架构
+
+https://www.langchain.com.cn/docs/concepts/#chat-models
+
+- Langchain-core:
+- langchain
+- langchain-community
+
+#### 2、步骤
+
+1. 安装langchain
+
+```bash
+conda install langchain -c conda-forge
+```
+
+2. 安装langchain-ollama
+
+```bash
+pip install -U langchain-ollama
+```
+
+3. langchain-ollama的相关文档
+
+https://reference.langchain.com/python/integrations/langchain_ollama/
+
+4、
