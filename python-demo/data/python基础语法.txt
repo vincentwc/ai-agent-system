@@ -1,0 +1,145 @@
+Python 基础语法速查（适用于 Python 3.x）
+
+1. 注释
+   - 单行注释：# 这是注释
+   - 多行注释：使用三引号（''' 或 """），但通常用于文档字符串
+
+2. 变量与赋值
+   - 动态类型，无需声明类型
+     name = "Alice"
+     age = 30
+     is_student = False
+
+3. 基本数据类型
+   - int：整数（如 42）
+   - float：浮点数（如 3.14）
+   - str：字符串（如 "hello"，可用单引号或双引号）
+   - bool：布尔值（True / False）
+   - None：空值（NoneType）
+
+4. 字符串操作
+   - 拼接：s = "Hello" + " World"
+   - 格式化：
+       f-string（推荐）：f"Hello {name}"
+       .format()： "Hello {}".format(name)
+   - 常用方法：.upper(), .lower(), .strip(), .split(), .replace()
+
+5. 列表（List）
+   - 有序、可变
+     fruits = ["apple", "banana", "cherry"]
+   - 常用操作：
+       fruits.append("orange")
+       fruits[0]        # 访问
+       fruits[1:3]      # 切片
+       len(fruits)      # 长度
+       "apple" in fruits # 成员检查
+
+6. 元组（Tuple）
+   - 有序、不可变
+     point = (10, 20)
+
+7. 字典（Dict）
+   - 键值对，无序（Python 3.7+ 保持插入顺序）
+     person = {"name": "Alice", "age": 30}
+   - 访问：person["name"]
+   - 添加/修改：person["city"] = "Beijing"
+   - 方法：.keys(), .values(), .items()
+
+8. 集合（Set）
+   - 无序、不重复
+     unique_nums = {1, 2, 3}
+   - 支持数学运算：union, intersection 等
+
+9. 条件语句
+   if age >= 18:
+       print("Adult")
+   elif age >= 13:
+       print("Teen")
+   else:
+       print("Child")
+
+10. 循环
+    - for 循环：
+        for i in range(5):          # 0 到 4
+            print(i)
+        for fruit in fruits:
+            print(fruit)
+
+    - while 循环：
+        count = 0
+        while count < 5:
+            print(count)
+            count += 1
+
+11. 函数定义
+    def greet(name):
+        return f"Hello, {name}!"
+
+    result = greet("Bob")
+
+    - 默认参数：
+        def power(x, n=2):
+            return x ** n
+
+    - 关键字参数、*args、**kwargs 也支持
+
+12. 异常处理
+    try:
+        result = 10 / 0
+    except ZeroDivisionError:
+        print("Cannot divide by zero")
+    finally:
+        print("Cleanup code")
+
+13. 模块导入
+    import math
+    from datetime import datetime
+    import os as operating_system
+
+14. 文件操作
+    with open("file.txt", "r") as f:
+        content = f.read()
+
+    with open("output.txt", "w") as f:
+        f.write("Hello, file!")
+
+15. 类与对象（基础）
+    class Dog:
+        def __init__(self, name):
+            self.name = name
+
+        def bark(self):
+            print(f"{self.name} says woof!")
+
+    my_dog = Dog("Buddy")
+    my_dog.bark()
+
+16. 常用内置函数
+    - print(), input()
+    - len(), type(), isinstance()
+    - range(), enumerate(), zip()
+    - map(), filter(), sum(), min(), max()
+
+17. 列表推导式（List Comprehension）
+    squares = [x**2 for x in range(10)]
+    evens = [x for x in range(20) if x % 2 == 0]
+
+18. 虚拟环境（推荐使用）
+    python -m venv myenv
+    source myenv/bin/activate   # macOS/Linux
+    myenv\Scripts\activate      # Windows
+
+19. 安装包（使用 pip）
+    pip install requests
+    pip list
+    pip freeze > requirements.txt
+
+20. 编码规范
+    - 使用 4 个空格缩进（非 Tab）
+    - 变量名用小写+下划线（snake_case）
+    - 遵循 PEP 8 风格指南
+
+---
+说明：此文档仅涵盖 Python 最基础的语法，适合入门和快速回顾。
+作者：Python 学习助手
+日期：2026-01-26
