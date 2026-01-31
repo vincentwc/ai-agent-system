@@ -92,11 +92,11 @@ class RagService(object):
         return conversation_chain
 
 
-if __name__ == "__main__":
-    # session_id配置
-    session_config = {"configurable": {"session_id": "user_001"}}
-    rag_service = RagService(
-        embedding=DashScopeEmbeddings(model=config.embedding_model)
-    )
-    res = rag_service.chain.invoke({"input": "羽绒服如何保养？"}, session_config)
-    print(res)
+# if __name__ == "__main__":
+#     # session_id配置
+#     session_config = {"configurable": {"session_id": "user_001"}}
+#     rag_service = RagService(
+#         embedding=DashScopeEmbeddings(model=config.embedding_model)
+#     )
+#     res = rag_service.chain.invoke({"input": "羽绒服如何保养？"}, session_config)
+#     print(res)
