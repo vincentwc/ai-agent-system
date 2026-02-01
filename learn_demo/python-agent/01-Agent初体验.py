@@ -9,7 +9,7 @@ def get_weather(location: str) -> str:
     获取指定位置的天气信息
     :param location: 位置名称
     :return: 天气描述字符串
-    """
+    """ 
     return "天气晴朗"
 
 
