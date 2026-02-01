@@ -2,4 +2,6 @@
 **/.env
 **/logs/*
 **/__pycache__/
-**/chroma_db/
+**/chroma_db/*
+learn_demo/python-agent/chroma_db/chroma.sqlite3
+learn_demo/python-agent/chroma_db/b4e68a72-372c-4be2-9f68-520bd07c4861/data_level0.bin
