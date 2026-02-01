@@ -64,7 +64,7 @@ def get_user_location() -> str:
 
 
 @tool("get_user_id", description="获取用户ID,以纯字符串的形式返回")
-def get_useer_id() -> str:
+def get_user_id() -> str:
     """
     获取用户ID
     """
@@ -141,6 +141,10 @@ def fetch_external_data(user_id: str, month: str) -> str:
         )
         return ""
 
+
+@tool("fill_context_for_report", description="无入参，无返回值，调用后出发中间件自动为报告生成的场景动态注入上下文信息，为后续提示词切换提供上下文信息")
+def fill_context_for_report():
+  return "fill_context_for_report已调用"
 
 # if __name__ == "__main__":
     # print(fetch_external_data("1005", "2025-06"))

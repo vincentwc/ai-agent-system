@@ -31,6 +31,11 @@ def monitor_tool(
     try:
         result = handler(request)
         logger.info(f"[monitor_tool]工具 {request.tool_call['name']} 调用成功")
+
+        if request.tool_call["name"] == "fill_context_for_report":
+            # 填充报告上下文标记的注入
+            request.runtime.context["report"] = True
+
         return result
     except Exception as e:
         logger.error(
@@ -42,7 +47,7 @@ def monitor_tool(
 @before_model
 def log_before_model(
     state: AgentState,
-    run: Runtime,
+    runtime: Runtime,
 ):
     """
     模型调用前日志记录
@@ -55,7 +60,20 @@ def log_before_model(
     logger.debug(
         f"[log_before_model]{type(state['messages'][-1]).__name__} | {state['messages'][-1].content.strip()}"
     )  # 打印最新一条消息的内容
-    
-    return None
-  
 
+    return None
+
+
+@dynamic_prompt # 每一次生成提示词之前，调用该函数
+def report_prompt_switch(request: ModelRequest):
+    """
+    动态提示词切换：每一次生成提示词之前，调用该函数
+    :param request: 模型调用请求数据封装
+    """
+    is_report = request.runtime.context.get("report", False)  # 从上下文获取报告场景标记
+    if is_report:
+        # 报告场景下的提示词
+        return load_report_prompts()
+
+    # 普通场景下的提示词
+    return load_system_prompts()
