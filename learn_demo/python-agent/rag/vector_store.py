@@ -1,5 +1,5 @@
 import os
-import utils.logger_handler as logger
+from utils.logger_handler import logger
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter

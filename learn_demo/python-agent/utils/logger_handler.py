@@ -1,6 +1,6 @@
+import os
 import logging
 from utils.path_tool import get_abs_path
-import os
 from datetime import datetime
 
 # 日志保存的根目录
@@ -56,8 +56,8 @@ def get_logger(
 # 快捷获取日志管理器 
 logger = get_logger()
 
-if __name__ == "__main__":
-    logger.info("这是一条info日志")
-    logger.debug("这是一条debug日志")
-    logger.error("这是一条error日志")
-    logger.warning("这是一条warning日志")
+# if __name__ == "__main__":
+#     logger.info("这是一条info日志")
+#     logger.debug("这是一条debug日志")
+#     logger.error("这是一条error日志")
+#     logger.warning("这是一条warning日志")

@@ -46,7 +46,7 @@ def listdir_with_allowed_type(path: str, allowed_types: tuple[str]):
       logger.error(f"[listdir_with_allowed_type]路径{path}不是文件夹")
       return allowed_types
     
-    for f in os.path.listdir(path):
+    for f in os.listdir(path):
       if f.endswith(allowed_types):
         files.append(os.path.join(path, f))
     
