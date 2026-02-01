@@ -3,7 +3,7 @@
 """
 
 import yaml
-from path_tool import get_abs_path
+from utils.path_tool import get_abs_path
 
 
 def load_rag_config(
@@ -59,5 +59,5 @@ chroma_config = load_chroma_config()
 agent_config = load_agent_config()
 prompts_config = load_prompts_config()
 
-if __name__ == "__main__":
-    print(agent_config["chat_model_name"])
+# if __name__ == "__main__":
+#     print(agent_config["chat_model_name"])
