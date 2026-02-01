@@ -55,3 +55,9 @@ def get_logger(
 
 # 快捷获取日志管理器 
 logger = get_logger()
+
+if __name__ == "__main__":
+    logger.info("这是一条info日志")
+    logger.debug("这是一条debug日志")
+    logger.error("这是一条error日志")
+    logger.warning("这是一条warning日志")

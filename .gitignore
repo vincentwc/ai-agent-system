@@ -1,2 +1,4 @@
 python-agent/.env
 .DS_Store
+learn_demo/python-agent/logs/*
+learn_demo/python-agent/utils/__pycache__/*
