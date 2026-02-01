@@ -2,3 +2,7 @@ python-agent/.env
 .DS_Store
 learn_demo/python-agent/logs/*
 learn_demo/python-agent/utils/__pycache__/*
+learn_demo/python-agent/rag/__pycache__/*
+learn_demo/python-agent/chroma_db/*
+learn_demo/python-agent/chroma_db/chroma.sqlite3
+learn_demo/python-agent/.env

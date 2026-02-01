@@ -121,23 +121,14 @@ class VectoreStoreService:
                     f"[加载知识库]文件{path}的内容加载失败,{str(e)}", exc_info=True
                 )
 
-    # def invoke(self, query: str):
-    #     """
-    #     搜索知识库
-    #     :param query: 查询字符串
-    #     :return: 搜索结果
-    #     """
-    #     return self.vector_store.similarity_search(query)
+# if __name__ == "__main__":
+#     vs = VectoreStoreService()
+#     vs.load_documents()
 
+#     retriever = vs.get_retriever()
 
-if __name__ == "__main__":
-    vs = VectoreStoreService()
-    vs.load_documents()
+#     res = retriever.invoke("迷路")
 
-    retriever = vs.get_retriever()
-
-    res = retriever.invoke("迷路")
-
-    for r in res:
-        print(r.page_content)
-        print("=" * 20)
+#     for r in res:
+#         print(r.page_content)
+#         print("=" * 20)
