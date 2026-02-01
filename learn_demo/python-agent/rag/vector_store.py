@@ -83,7 +83,8 @@ class VectoreStoreService:
             return []
 
         allowed_file_path = listdir_with_allowed_type(
-            chroma_config["data_path"], tuple(chroma_config["allowed_file_type"])
+            get_abs_path(chroma_config["data_path"]),
+            tuple(chroma_config["allowed_file_type"]),
         )
 
         for path in allowed_file_path:
@@ -120,24 +121,23 @@ class VectoreStoreService:
                     f"[加载知识库]文件{path}的内容加载失败,{str(e)}", exc_info=True
                 )
 
-    def invoke(self, query: str):
-        """
-        搜索知识库
-        :param query: 查询字符串
-        :return: 搜索结果
-        """
-        return self.vector_store.similarity_search(query)
+    # def invoke(self, query: str):
+    #     """
+    #     搜索知识库
+    #     :param query: 查询字符串
+    #     :return: 搜索结果
+    #     """
+    #     return self.vector_store.similarity_search(query)
 
 
 if __name__ == "__main__":
     vs = VectoreStoreService()
     vs.load_documents()
 
-    vs.get_retriever()
+    retriever = vs.get_retriever()
 
-    res = vs.invoke("迷路")
+    res = retriever.invoke("迷路")
 
-    for i, r in enumerate(res):
-        print(f"结果{i + 1}:")
+    for r in res:
         print(r.page_content)
         print("=" * 20)
